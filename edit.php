@@ -58,6 +58,7 @@ else{
     <div class="checkbox">
       <label><input type="checkbox" name="remember"> Remember me</label>
     </div>
+    <a href="viewrecord.php" class="btn btn-default" >Back to list </a>
     <button type="submit" name="submit" class="btn btn-success ">Save Changes</button>
   </form>
 <?php } ?>
