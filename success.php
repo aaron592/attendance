@@ -11,11 +11,13 @@
    $occupation = $_POST['job'];
    $email = $_POST['email'];
    $contact = $_POST['number'];
+   
    $orig_file = $_FILES["file"]["tmp_name"];
    $ext = pathinfo($_FILES["file"]["name"], PATHINFO_EXTENSION);
    $target_dir = 'uploads/';
    $destination = "$target_dir$contact.$ext";
    move_uploaded_file($orig_file,$destination);
+   
    $isSuccess = $crud->insertAttendees($fname,$lname,$dob,$occupation,$email,$contact,$destination);
    if($isSuccess){
     include 'includes/successmessage.php';
