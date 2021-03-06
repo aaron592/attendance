@@ -42,19 +42,24 @@
 -->
 
 
-<img src="<?php echo $destination; ?>" class="rounded-circle" style="width: 20%; height: 20%" />
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title"><?php echo $_POST['firstname']. " ". $_POST['lastname']?></h6>
-    <h6 class="card-subtitle mb-2 text-muted"><?php echo $_POST['job']?></h6>
-    <p class="card-text">Date of birth: <?php echo $_POST['dob']?></p>
-    <p class="card-text">Email: <?php echo $_POST['email']?></p>
-    <p class="card-text">Contact no: <?php echo $_POST['number']?></p>
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
-  </div>
-</div>
+<h2 style="text-align:center">Profile Card</h2>
 
+<div class="card">
+ <img src="<?php echo $destination; ?>" class="rounded-circle" style="width: 100%; height: auto" />
+  <h1><?php echo $_POST['firstname']. " ". $_POST['lastname']?></h1>
+  <p class="title"><?php echo $_POST['job']?></p>
+  <div style="margin: 24px 0;">
+  <p>Date of birth: <?php echo $_POST['dob']?></p>
+  <p>Email: <?php echo $_POST['email']?></p>
+  <p>Contact no: <?php echo $_POST['number']?></p>
+  
+    <a href="#"><i class="fa fa-dribbble"></i></a> 
+    <a href="#"><i class="fa fa-twitter"></i></a>  
+    <a href="#"><i class="fa fa-linkedin"></i></a>  
+    <a href="#"><i class="fa fa-facebook"></i></a> 
+  </div>
+  <p><button>Contact</button></p>
+</div>
 
 
 
