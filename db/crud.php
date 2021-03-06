@@ -8,10 +8,10 @@ class crud {
         $this->db = $conn;
     }
 
-    public function insertAttendees($fname,$lname,$dob,$occupation,$email,$contact){
+    public function insertAttendees($fname,$lname,$dob,$occupation,$email,$contact,$avatar_path){
 
         try{
-            $sql="INSERT INTO attendee (firstname,lastname,dateofbirth,status_id,emailaddress,contactnumber) VALUES (:fname,:lname,:dob,:occupation,:email,:contact)";
+            $sql="INSERT INTO attendee (firstname,lastname,dateofbirth,status_id,emailaddress,contactnumber,avatar_path) VALUES (:fname,:lname,:dob,:occupation,:email,:contact,:avatar_path)";
             $stmt = $this->db->prepare($sql);
             $stmt->bindparam(':fname', $fname);
             $stmt->bindparam(':lname', $lname);
@@ -19,6 +19,7 @@ class crud {
             $stmt->bindparam(':occupation', $occupation);
             $stmt->bindparam(':email', $email);
             $stmt->bindparam(':contact', $contact);
+            $stmt->bindparam(':avatar_path', $avatar_path);
 
             $stmt->execute();
             return true;
@@ -74,12 +75,20 @@ class crud {
 
 
     public function getAttendeeDetails($id){
+        try{
         $sql = "select * from attendee a inner join status s on a.status_id = s.status_id where attendee_id = :id";
         $stmt = $this->db->prepare($sql);
         $stmt->bindparam(':id', $id);
         $stmt->execute();
         $result = $stmt->fetch();
         return $result;
+        }catch(PDOException $e){
+            echo $e->getMessage();
+            return false;
+
+        }
+
+
     }
 
 
@@ -99,10 +108,19 @@ class crud {
 }
 
     public function getStatus(){
+        try{
         $sql = "SELECT * FROM `status` ORDER BY `status_id` ASC";
         $result = $this->db->query($sql);
         return $result;
+        }catch(PDOException $e){
+            echo $e->getMessage();
+            return false;
+
     }
+    }
+
+
+
 }
 
 ?>

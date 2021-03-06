@@ -2,14 +2,14 @@
   $title = 'Index';
  require_once 'includes/header.php' ;
  require_once 'db/conn.php';
-
+ 
 $results = $crud->getStatus();
 
  ?>
 <div class="container" >
     <h1 class="text-center">Registration Form </h1>
 
-    <form method="post" action="success.php">
+    <form method="post" action="success.php" enctype="multipart/form-data">
     <div class="form-group">
       <label for="firstname">First Name:</label>
       <input required type="text" class="form-control" id="firstname"  name="firstname">
@@ -41,9 +41,13 @@ $results = $crud->getStatus();
       <input required type="phone" class="form-control" id="number"  name="number">
       <small id="emailHelp" class="form-text text-muted">We'll never share your number with anyone else.</small>
     </div>
-    <div class="checkbox">
-      <label><input type="checkbox" name="remember"> Remember me</label>
-    </div>
+    <div class="input-group mb-3">
+  <div class="custom-file">
+    <input type="avatar" accept="image/*" class="custom-file-input" id="avatar" name="avatar">
+    <label class="custom-file-label" for="avatar">Choose file</label>
+  </div>
+</div>
+    
     <button type="submit" name="submit" class="btn btn-dark ">Submit</button>
   </form>
 
