@@ -42,67 +42,21 @@
 -->
 
 
-<aside class="profile-card">
-  <header>
-    <!-- here’s the avatar -->
-    <a target="_blank" href="#">
-      <img src="<?php echo $destination; ?>" class="hoverZoomLink" style="width: 100%; height: auto" />
-      
-    </a>
-
-    <!-- the username -->
-    <h1>
-           <?php echo $_POST['firstname']. " ". $_POST['lastname']?>
-          </h1>
-
-    <!-- and role or location -->
-    <h2>
-            <?php echo $_POST['job']?>
-          </h2>
-
-  </header>
-
-  <!-- bit of a bio; who are you? -->
-  <div class="profile-bio">
-
-    <p>
-     Date of birth: <?php echo $_POST['dob']?>
-    </p>
-    <p>
-      Email: <?php echo $_POST['email']?>
-    </p>
-    
-    <p>
-      Contact no: <?php echo $_POST['number']?>
-    </p>
-
+<center>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+  <img src="<?php echo $destination; ?>" class="" style="width: 100%; height: 20%" />
+    <h5 class="card-title"><?php echo $_POST['firstname']. " ". $_POST['lastname']?></h6>
+    <h6 class="card-subtitle mb-2 text-muted"><?php echo $_POST['job']?></h6>
+    <p class="card-text">Date of birth: <?php echo $_POST['dob']?></p>
+    <p class="card-text">Email: <?php echo $_POST['email']?></p>
+    <p class="card-text">Contact no: <?php echo $_POST['number']?></p>
+    <div class="card-footer">
+      <small class="text-muted">Last updated 3 mins ago</small>
+    </div>
   </div>
-
-  <!-- some social links to show off -->
-  <ul class="profile-social-links">
-    <li>
-      <a target="_blank" href="https://www.facebook.com/creativedonut">
-        <i class="fa fa-facebook"></i>
-      </a>
-    </li>
-    <li>
-      <a target="_blank" href="https://twitter.com/dropyourbass">
-        <i class="fa fa-twitter"></i>
-      </a>
-    </li>
-    <li>
-      <a target="_blank" href="https://github.com/vipulsaxena">
-        <i class="fa fa-github"></i>
-      </a>
-    </li>
-    <li>
-      <a target="_blank" href="https://www.behance.net/vipulsaxena">
-       
-        <i class="fa fa-behance"></i>
-      </a>
-    </li>
-  </ul>
-</aside>
+</div>
+</center>
 
 
 
