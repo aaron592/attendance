@@ -19,7 +19,7 @@ class user{
 
             }else{
                 $new_password = md5($password.$username);
-                $sql="INSERT INTO users1 (username,password) VALUES (:username,:password)";
+                $sql="INSERT INTO users (username,password) VALUES (:username,:password)";
                 $stmt = $this->db->prepare($sql);
                 $stmt->bindparam(':username', $username);
                 $stmt->bindparam(':password', $new_password);
@@ -42,7 +42,7 @@ class user{
     public function getUser($username,$password){
 
         try{
-            $sql = "select * from users1 where username = :username AND password = :password";
+            $sql = "select * from users where username = :username AND password = :password";
             $stmt = $this->db->prepare($sql);
             $stmt->bindparam(':username', $username);
             $stmt->bindparam(':password', $password);
