@@ -45,7 +45,7 @@
 <h2 style="text-align:center">Profile Card</h2>
 
 <div class="card">
- <img src="<?php echo $destination; ?>" class="rounded-circle" style="width: 100%; height: auto" />
+ <img src="<?php echo $destination; ?>" class="rounded-circle" style="width: 30%; height: 30%" />
   <h1><?php echo $_POST['firstname']. " ". $_POST['lastname']?></h1>
   <p class="title"><?php echo $_POST['job']?></p>
   <div style="margin: 24px 0;">
