@@ -43,7 +43,7 @@ $results = $crud->getStatus();
     </div>
     <div class="input-group mb-3">
   <div class="custom-file">
-    <input type="avatar" accept="image/*" class="custom-file-input" id="avatar" name="avatar">
+    <input type="file" accept="image/*" class="custom-file-input" id="avatar" name="avatar">
     <label class="custom-file-label" for="avatar">Choose file</label>
   </div>
 </div>
